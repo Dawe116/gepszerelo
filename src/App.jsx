@@ -6,6 +6,22 @@ import React, {useState} from 'react';
   const [processor, setProcessor] = useState(null);
   const [memory, setMemory] = useState(null);
   const [motherboard, setMotherboard] = useState(null);
+  const [keyboard, setKeyboard] = useState(null);
+  const [mouse, setMouse] = useState(null);
+
+  const mouses = [
+    {name: 'Razer', price: 75000},
+    {name: 'Logitech', price: 62000},
+    {name: 'Corsair', price: 46000},
+    {name: 'Red-Dragon', price: 22000},
+  ]
+
+  const keyboards =[
+    {name: 'Logitech', price: 45000},
+    {name: 'Corsair', price: 60000},
+    {name: 'Razer', price: 90000},
+    {name: 'Spirit of Gamers', price: 25000},
+  ]
 
   const motherboards =[
     {name: 'Asus', price: 30000},
@@ -45,11 +61,25 @@ import React, {useState} from 'react';
           onSelect={setMemory}
         />
 
-<ComponentSelector
+        <ComponentSelector
           name="Motherboard"
           options={motherboards}
           selectedOption={motherboard}
           onSelect={setMotherboard}
+        />
+
+        <ComponentSelector
+          name="Keyboard"
+          options={keyboards}
+          selectedOption={keyboard}
+          onSelect={setKeyboard}
+        />
+
+        <ComponentSelector
+          name="Mouse"
+          options={mouses}
+          selectedOption={mouse}
+          onSelect={setMouse}
         />
 
         <p>
